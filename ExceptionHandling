@@ -1,0 +1,24 @@
+using System;
+
+public class MyClass
+{
+    public static void Main(string[] args)
+    {
+        try
+        {
+            string[] Names = { "Ram", "John", "Seetha" };
+            console.WriteLine(string[4]);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("An error occurred: " + ex.Message);
+        }
+        finally
+        {
+         console.Writeline("Execution Completed!!");  // Final block will execute if error capture or not.
+        }
+    }
+}
+
+Output : An error occurred: Index was outside the bounds of the array.
+Execution Completed
