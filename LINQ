@@ -1,21 +1,21 @@
-LINQ - Sample code
-------------------
+Sample 1
+---------
+using System;
+using System.Linq;
 
+Public class TestLinq
+ {
+    int[] numbers = new int[10] {1,2,3,4,5,6,7,8,9,10};
 
-1.Public class TestLinq
-2.  {
-3.      int[] numbers = new int[10] {1,2,3,4,5,6,7,8,9,10};
-4. 
-5.        var even = from num in numbers
-6.                  where (n%2 == 0)
-7.                   select num;
-8.
-9.  foreach(var num in even)
-10.     {
-11.       console.writeLine(num);
-12.     }
-13.
-14.  }
+    var even = from num in numbers
+                 where (n%2 == 0)
+                   select num;
+
+    foreach(var num in even)
+     {
+       console.writeLine(num);
+     }
+  }
   
 
 Output :
@@ -24,3 +24,54 @@ Output :
 6
 8
 10
+
+
+Sample 2
+--------
+
+using System;
+using System.Collections.Generic; // Added this for List<T>
+using System.Linq; // Added this for LINQ
+
+public class Students
+{
+    public string Name { get; set; }
+    public int Class { get; set; }
+    public string Place { get; set; }
+}
+
+public class Program
+{
+    static void Main(string[] args)
+    {
+        List<Students> students = new List<Students>()
+        {
+            new Students() { Name = "John", Class = 11, Place = "America" },
+            new Students() { Name = "Anna", Class = 11, Place = "India" },
+            new Students() { Name = "Dev", Class = 11, Place = "Canada" },
+            new Students() { Name = "Seetha", Class = 11, Place = "India" }
+        };
+
+        var details = students.Where(a => a.Place == "India");
+
+        foreach (var item in details)
+        {
+            Console.WriteLine(item.Name);
+        }
+    }
+}
+ 
+
+
+Output :
+Anna
+Seetha
+
+
+
+
+
+
+
+
+
