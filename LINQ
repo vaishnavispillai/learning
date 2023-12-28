@@ -1,0 +1,26 @@
+LINQ - Sample code
+------------------
+
+
+1.Public class TestLinq
+2.  {
+3.      int[] numbers = new int[10] {1,2,3,4,5,6,7,8,9,10};
+4. 
+5.        var even = from num in numbers
+6.                  where (n%2 == 0)
+7.                   select num;
+8.
+9.  foreach(var num in even)
+10.     {
+11.       console.writeLine(num);
+12.     }
+13.
+14.  }
+  
+
+Output :
+2
+4
+6
+8
+10
